@@ -1,55 +1,77 @@
 # Walkthrough for SuiteCRM - ASTI Internship 
 
-This walkthrough was made using the LAMP stack installed on an Ubuntu Virtual Machine hosted on Oracle VM Virtualbox, and assumes you already have SuiteCRM installed.
+This walkthrough was made using the LAMP stack installed on an Ubuntu Virtual Machine hosted on Oracle VM Virtualbox, and assumes you already have SuiteCRM installed. 
 
-Here are some helpful tutorials:
+Here are some helpful tutorials:\
 https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04
+
 https://upcloud.com/community/tutorials/installing-lamp-stack-ubuntu/
+
 https://docs.suitecrm.com/admin/installation-guide/downloading-installing/
 
-Version:
-L
-Apache
-M
-P
-Oracle VM Virtualbox
+This walkthrough is made with the purpose of making things a little bit easier for the next intern taking on this project.
+
+Version:\
+L\
+Apache\
+M\
+P\
+Oracle VM Virtualbox\
 SuiteCRM
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-  
 ## Making an Admin Account and Accessing the SuiteCRM Site
+
+Following the official SuiteCRM installation guide, you can set up the admin account by accessing the Site Configuration page after going through the install. The SuiteCRM tutorial gives this link http://<yourServer>/<yourSuiteCRMDirectory>/install.php which isn't really all that helpful if you don't know what <yourServer> and <yourSuiteCRMDirectory> means.
+  
+Basically, 
+
 ## Accessing the Virtual Machine Website from the Host Computer
 ## Changing the Site Name
-## Extracting and Importing Data 
+## Extracting and Importing Data
+  
+For ASTI, we were given a masterlist of suppliers on Google Sheets with inconsistent data entries. It is likely that you will have to input at least some of them by hand, but the majority of companies and contacts can be inputted first by using native data cleaning options on Google Sheets. You can also write your own ETL scripts to normalize the data. What I did was separate email entries using all possible delimiters (as we only need one email for the company) and then inputting either the email or a blank entry if the remaining text was invalid.
+  
+You can directly import entries into prebuilt SuiteCRM modules. When on the module in question (Companies, Contacts, etc) there should be an option to click a button to import a CSV file from your computer. From there you can assign columns in the file to different data fields in the module itself. The process is reasonably quick, and omits rows where there are errors. Be careful to check that the amount of entries on the file you import is the same as the amount of entries in the table.
+  
+I have noticed that you cannot import data into custom modules for whatever reason. I have not found a fix since this problem came up in the last week of my internship, but this link may help: https://community.suitecrm.com/t/custom-module-and-bulk-importing/70094/2
+  
+Note: There is also likely an option to directly import data using SQL, but I have not tried it out myself.
+  
 ## Changing Module Names and Variable Names
+  
+This is reasonably simple. You can change the names of modules by going into the ____ and you can change the names of variables by going into the _____. From there, changing the name is as simple as _____.
+  
 ## Creating Custom Modules
+ 
+Custom modules can be made in the Module Builder section, which can be found in the _______. There are several templates to choose from. You can customize relationships, names, and variables at your leisure.
+  
+For ASTI, we wanted a version of the Suppliers module without the multiple relationships cluttering up the page and distracting users. This became difficult, since some relationships were impossible to remove for one reason or another, so we instead decided to go forward with custom modules.
+
+ 
 ## Removing or Adjusting Relationships
+
+This can be done by going into the _____. There, some options will arise
+  
 ## Filtering and Changing Default Views
+  
+This can be done by going into the ______. 
+  
+There is an inbuilt search function for tables that searches from the leftmost character to the right (which means that if you search for the subsection of a string in the middle of the bigger string, the entry will not show up in the search). You can also filter by industry and so on, and do bulk actions based on the remaining entries on sreen.
+  
 ## Creating Custom Dropdown Menus
+  
+You can create dropdown menus by going into the ______.
+  
+For the internship, since we wanted to keep things simple, we removed all dropdown menus by doing ______.
+  
 ## Making Tags
+  
+Checking briefly online it can be easily seen that there are paid options to add tags. We may want to implement some sort of tag system, since some supplier companies may fit into more than one, and so it may be useful to have more than one. Since we want to keep things cheap, what we can instead do is create a custom module with a many-to-many relationship with the module we want to tag. 
+
 ## Email Variables
+  
+Email variables can be done by selecting in the top right which module you want to pull data from. This lets you use it down in the body of the email to customize 
+  
 ## Unfixed Problems
 
 Analytics
