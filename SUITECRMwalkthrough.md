@@ -12,12 +12,12 @@ https://docs.suitecrm.com/admin/installation-guide/downloading-installing/
 This walkthrough is made with the purpose of making things a little bit easier for the next intern taking on this project.
 
 Version:\
-L\
-Apache\
-M\
-P\
-Oracle VM Virtualbox\
-SuiteCRM
+Ubuntu - Version 18.04.02 LTS\
+Apache2 - Version 2.4.46\
+MySQL - Version 8.0\
+PHP - Version 8.0.8\
+Oracle VM Virtualbox - Version 6.1.25\
+SuiteCRM - Version 7.11
 
 ## Making an Admin Account and Accessing the SuiteCRM Site
 
@@ -66,6 +66,7 @@ This can be done by going into the Studio, and moving to the module you want to 
 A relationship will have a name, a primary module, a type, and a related module. The purpose of the name is self-evident, and the primary module is the source of the relationship. There are three types of relationship: one to one, one to many, and many to many. In a one-to-one relationship, a unit in the primary module can only be related to one other unit in the related module, and vice-versa. In a one-to-many relationship, a unit in a primary module can be related to as many units in the related module as needed, but units in the related module can only be related to one unit in the primary module. In a many-to-many relationship, there are no restrictions on the amount of units a given unit can be related to. Modules can have several different relationships, even between the same modules.
 
 These relationships are useful for creating things like tags, associated contact details, contracts, and so on.
+
 ## Filtering and Changing Default Views
   
 Units in modules can be filtered through a button in the View Module tab (it's the one using the icon of a coffee filter). There criteria can be used to filter out entries with certain names, filter by type, and so on. Columns can also be ommitted from the view using the column chooser button to the right of the filter button.
